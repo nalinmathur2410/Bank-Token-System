@@ -1,6 +1,4 @@
 const express = require('express');
-const app = require('../app');
-const socket = app.io;
 const Token = require('../models/token');
 
 const agent = (io) => {
@@ -14,7 +12,7 @@ const agent = (io) => {
             const token = new Token(req.body);
             const result = await token.save();
             if (result) {
-                io.emit('changeDisplay', {data: result, res});
+                io.emit('changeDisplay');
                 res.render('agent');
             }
         } catch (error) {
