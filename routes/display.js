@@ -7,7 +7,7 @@ let tokenArray = [];
 
 /* GET home page. */
 router.get('/', function (req, res) {
-    res.redirect('/display');
+    res.render('display');
 });
 
 socket.on('changeDisplay', async (data) => {

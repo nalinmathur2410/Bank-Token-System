@@ -4,25 +4,25 @@ const User = require('../models/user');
 const localStorage = require('localStorage');
 
 router.get('/login', function (req, res, next) {
-    const user = localStorage.getItem('user');
-    if (user) {
-        switch (user.role) {
-            case 'officer': {
-                res.render('officer');
-                break;
-            }
-            case 'agent': {
-                res.render('agent');
-                break;
-            }
-            case 'display': {
-                res.render('display');
-                break;
-            }
-        }
-    } else {
+    // const user = localStorage.getItem('user');
+    // if (user) {
+    //     switch (user.role) {
+    //         case 'officer': {
+    //             res.redirect('/officer');
+    //             break;
+    //         }
+    //         case 'agent': {
+    //             res.redirect('/agent');
+    //             break;
+    //         }
+    //         case 'display': {
+    //             res.redirect('/display');
+    //             break;
+    //         }
+    //     }
+    // } else {
         res.render('login');
-    }
+    // }
 });
 
 router.get('/register', function (req, res, next) {
@@ -37,15 +37,15 @@ router.post('/login', function (req, res, next) {
             localStorage.setItem('user', result);
             switch (result.role) {
                 case 'officer': {
-                    res.render('officer');
+                    res.redirect('/officer');
                     break;
                 }
                 case 'agent': {
-                    res.render('agent');
+                    res.redirect('/agent');
                     break;
                 }
                 case 'display': {
-                    res.render('display');
+                    res.redirect('/display');
                     break;
                 }
             }
