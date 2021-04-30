@@ -1,1 +1,1 @@
-# queue-management-system
+# Simple Queue Management System for offices
