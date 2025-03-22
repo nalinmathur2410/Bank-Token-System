@@ -1,0 +1,26 @@
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/officer.js"></script>
+
+<h1>Officer Home</h1>
+<div class="container">
+    <table id="token-list" class="table table-striped table-bordered">
+        <tr>
+            <td>Token No.</td>
+            <td>Name</td>
+            <td>Purpose</td>
+            <td>Status</td>
+            <td>Operation</td>
+        </tr>
+        <tbody id="tokenList">
+            {{#each tokens}}
+            <tr>
+                <td>{{this.tokenNo}}</td>
+                <td>{{this.name}}</td>
+                <td>{{this.purpose}}</td>
+                <td>{{this.tokenState}}</td>
+                <td><button class="claim-button btn btn-primary" data-id="{{this._id}}">Claim</button></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
