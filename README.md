@@ -1,4 +1,4 @@
-# Queue Management System
+# Bank Token System
 
 A simple and efficient Queue Management System designed for office environments to streamline customer flow and service allocation.
 
